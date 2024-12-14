@@ -37,7 +37,7 @@ function Login() {
                                 type="text"
                                 name='idNhanVien'
                                 className='name inputForm'
-                                placeholder='社員コード222'
+                                placeholder='社員コード'
                                 value={idNhanVien}
                                 onChange={e => setID(e.target.value)}
                             />
