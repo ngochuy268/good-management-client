@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$font: 'Roboto', sans-serif;
+$text-color: rgb(204, 255, 204);
+$mgRightMenuName: 10px;
+$fontSize: 16px;
+$borderColor: 1px solid #ced4da;
+$innerShadow: inset 0px 4px 12px -4px #ABABAB;
+
+
+.wrapperTitle {
+    background-color: #007bff;
+    border-radius: 8px;
+    color: white;
+
+    p {
+        margin: 0;
+        padding: 15px;
+        font-family: $font;
+        font-weight: 300;
+        font-size: 18px;
+    }
+}
+
+.listGoodsInfoWrapper {
+    margin-top: 24px;
+    border: 1px groove;
+    border-radius: 5px;
+    box-shadow: 0px 0px 23px -6px rgba(0, 0, 0, 0.55);
+    padding: 20px;
+
+
+    .listGoodsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; // Khoảng cách giữa các card
+        padding: 20px;
+    }
+
+    .listGoods {
+        font-family: $font;
+        // width: 100%;
+        flex: 0 0 300px; // Cố định width của mỗi card
+        max-width: 300px;
+        margin-bottom: 20px;
+
+        .listGoodsWrapper {
+            
+            height: 300px;
+            width: 300px; // Thêm width cố định
+            display: flex;
+            flex-direction: column;
+            border: $borderColor;
+            border-radius: 7px;
+            border-top: 3px solid #28a745;
+            -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.61);
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.61);
+
+            .listGoodsHeader {
+                position: relative;
+                padding: 12px 20px;
+                font-size: 22px;
+
+                p {
+                    margin: 0;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    border-bottom: $borderColor;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                .ribbonWrapper {
+                    position: absolute;
+                    width: 100px;
+                    height: 100px;
+                    right: 0;
+                    top: 0;
+                    overflow: hidden;
+
+                    .ribbon.on {
+                        right: 22px;
+                        top: 26px;
+                        width: 160px;
+                        box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+                        font-size: 15px;
+                        color: white;
+                        line-height: 100%;
+                        padding: .375rem 0;
+                        position: relative;
+                        text-align: center;
+                        text-shadow: 0 -1px 0 rgb(0 0 0 / 40%);
+                        text-transform: uppercase;
+                        -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        background-color: #28a745 !important;
+                        z-index: 1;
+                    }
+
+                    .ribbon.off {
+                        right: 22px;
+                        top: 26px;
+                        width: 160px;
+                        box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+                        font-size: 15px;
+                        line-height: 100%;
+                        padding: .375rem 0;
+                        position: relative;
+                        text-align: center;
+                        text-shadow: 0 -1px 0 rgb(0 0 0 / 40%);
+                        text-transform: uppercase;
+                        -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        background-color: #ffc107 !important;
+                        z-index: 1;
+                    }
+                }
+
+            }
+
+            .listGoodsBody {
+                margin: 0;
+                width: 250px;
+                height: 200px;
+                padding: 0 16px 16px 16px;
+
+                .listGoodInfoWrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    width: 100%;
+                    height: 80px;
+
+                    .listGoodInfoItem {
+
+                        .listGoodInfo {
+                            display: flex;
+                            align-items: center;
+
+                            span {
+                                font-weight: 700;
+                            }
+
+                            p {
+                                margin: 7px 0;
+                            }
+                        }
+                    }
+
+                    img {
+                        width: 35%;
+                        padding: 8px 8px 8px 0;
+                    }
+
+                    span {
+                        margin-right: 8px;
+                    }
+                }
+
+                .listGoodSpecificationWrapper {
+
+                    h3 {
+                        margin: 15px 0 3px 0;
+                    }
+
+                    .listGoodSpecificationItem {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+
+                        .listGoodSpecification {
+                            display: flex;
+                            align-items: center;
+
+                            span {
+                                font-weight: 700;
+                                margin-right: 5px;
+                            }
+
+                            p {
+                                margin: 3px 0 3px 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .listGoodsFunctionButton {
+                margin-top: auto;
+                display: flex;
+                gap: 10px;
+                justify-content: space-between; 
+                padding-top: 15px; // Thêm khoảng cách với nội dung trên
+                
+                .listGoodsDeleteButton {
+                    background: none;
+                    border: none;
+                    color: #dc3545; 
+                    cursor: pointer;
+                    font-size: 18px;
+                    padding: 10px;
+                    transition: all 0.3s ease;
+            
+                    &:hover {
+                        color: #c82333;
+                        transform: scale(1.1);
+                    }
+                }
+            
+                .listGoodsEditButton {
+                    background: none;
+                    border: none;
+                    color: #007bff;
+                    cursor: pointer;
+                    padding: 10px;
+                    font-size: 18px;
+                    transition: all 0.3s ease;
+            
+                    &:hover {
+                        color: #0056b3;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .listGoodsWrapper {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
+.goodEditContainer {
+    padding: 20px;
+
+    .goodEditWrapper {
+        margin: 25px 0;
+
+        h3 {
+            margin: 3px 0 0 0;
+
+        }
+
+        .goodEditInputWrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            .goodEditInputItem {
+                width: 100%;
+                text-align: center;
+
+                p {
+                    margin: 7px 0 3px 0;
+                    font-weight: 600;
+                }
+
+                input {
+                    width: 70%;
+                    height: 30px;
+                    padding: 6px 12px;
+                    font-size: 16px;
+                    border: 1px solid #ced4da;
+                    border-radius: 4px;
+                    background-color: white;
+                    appearance: none;
+                    padding-right: 30px;
+                    background-repeat: no-repeat;
+                    background-position: right 8px center;
+                    background-size: 16px;
+                    
+                    &:focus {
+                        outline: none;
+                        border-color: #86b7fe;
+                        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+                    }
+                }
+
+                .goodEditSelect {
+                    width: 70%;
+                    height: 30px;
+                    padding: 6px 12px;
+                    font-size: 16px;
+                    border: 1px solid #ced4da;
+                    border-radius: 4px;
+                    background-color: white;
+                    appearance: none;
+                    padding-right: 30px;
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+                    background-repeat: no-repeat;
+                    background-position: right 8px center;
+                    background-size: 16px;
+                    
+                    &:focus {
+                        outline: none;
+                        border-color: #86b7fe;
+                        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+                    }
+                }
+            }
+
+        }
+
+        .goodEditDesc {
+            margin-top: 10px;
+            width: 100%;
+            height: 70px;
+            border-radius: 8px;
+            border: $borderColor;
+            box-shadow: $innerShadow;
+            outline: none;
+        }
+
+    }
+
+  
+
+    .saveButtonWrapper {
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+
+        .saveButton {
+            padding: 10px 30px;
+            border-radius: 5px;
+            background-color: #007bff;
+            border: transparent;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                background: rgb(4, 66, 135);
+                background: linear-gradient(180deg, rgba(4, 66, 135, 1) 0%, rgba(12, 29, 180, 1) 82%);
+            }
+        }
+    }
+}
+
+.closeButtonWrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px;
+
+    .closeButton {
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 6px;
+        background: rgb(237, 2, 2);
+        background: linear-gradient(180deg, rgba(237, 2, 2, 1) 0%, rgba(249, 45, 0, 0.9047355758709734) 79%);
+
+        &:hover {
+            cursor: pointer;
+            background: rgb(237, 2, 2);
+            background: linear-gradient(0deg, rgba(237, 2, 2, 1) 0%, rgba(249, 45, 0, 0.9047355758709734) 79%);
+        }
+    }
+}
+
+.listGoodsImg {
+    border-radius: 50%;
+    width: 100%;
+}
+
+// ----------------------Delete Dialog----------------------
+
+.deleteDialogContainer {
+    padding: 20px 24px;
+}
+
+.deleteDialogContent {
+    text-align: center;
+    margin-bottom: 24px;
+
+    p {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+    .deleteWarning {
+        color: #dc3545;
+        font-size: 14px;
+        margin-top: 12px;
+    }
+}
+
+.deleteButtonWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.cancelButton {
+    padding: 8px 24px;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+
+    &:hover {
+        background: #6c757d; // Thêm màu background khi hover
+        color: white; // Đổi màu chữ thành trắng khi hover
+    }
+}
+
+.deleteButton {
+    padding: 8px 24px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+
+    &:hover {
+        background: #c82333;
+    }
+}
+//-------------------------------------------------
+
+@media screen and (max-width: 746px) {
+    .goodEditContainer {
+        .goodEditWrapper {
+            .goodEditInputWrapper {
+                display: block;
+
+                .goodEditInputItem {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+
+   
+  
+}
+
+@media screen and (max-width: 721px) {
+    .listGoodsContainer {
+        justify-content: center; // Căn giữa theo chiều ngang
+        align-items: center; // Căn giữa theo chiều dọc
+        width: 100%; 
+    }  
+}

@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$font: 'Roboto', sans-serif;
+
+
+
+
+.loginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../assets/loginImg/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    background-position:center;
+    background-origin:border-box;
+    width: 100%;
+    height: 100vh;
+}
+
+.loginForm {
+    // min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: transparent;
+    width: 35%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    border-radius: 10px;
+    border-color: aqua;
+    background: rgb(1,1,1);
+    background: linear-gradient(28deg, rgba(1,1,1,1) 0%, rgba(255,255,255,0) 100%);
+
+    .pageLogo {
+        position: absolute;
+        top: -85px;
+        border-radius: 50%;
+        padding: 10px;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+
+
+        img {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+        }
+    }
+}
+
+.form {
+    margin-top: 100px;
+    margin-bottom: 60px;
+    width: 100%;
+    padding: 0 60px;
+
+    .formInputWithErr {
+        margin-bottom: 18px;
+
+        .errInput1 {
+            font-family: $font;
+            color: blue;
+            margin: 10px 0 15px 0;
+        }
+    }
+}
+
+.formInput {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+
+    .inputGroupAppend {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: #5FE00A;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .inputForm {
+        width: 100%;
+        border-color: transparent;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &:nth-child(2) {
+        margin-top: 60px;
+    }    
+}
+
+.gender-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px; /* Khoảng cách giữa "Giới tính" và các lựa chọn */
+    margin: 0 50px;
+
+    .gender-label {
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+    }
+    
+    .gender-selection {
+        display: flex;
+        gap: 20px; /* Khoảng cách giữa các lựa chọn */
+    }
+    
+    .gender-option {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        position: relative;
+        padding-left: 30px; /* Để chừa chỗ cho checkmark */
+    }
+    
+    .gender-option input {
+        position: absolute;
+        opacity: 0; /* Ẩn radio mặc định */
+        cursor: pointer;
+    }
+    
+    .gender-option .checkmark {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 20px;
+        width: 20px;
+        background-color: #f0f0f0;
+        border: 2px solid #ccc;
+        border-radius: 50%; /* Tạo hình tròn */
+        transition: all 0.3s ease;
+    }
+    
+    /* Khi được chọn */
+    .gender-option input:checked ~ .checkmark {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    
+    .gender-option input:checked ~ .checkmark:after {
+        content: "";
+        position: absolute;
+        top: 50%; /* Căn giữa */
+        left: 50%; /* Căn giữa */
+        transform: translate(-50%, -50%); /* Căn chỉnh hoàn toàn chính giữa */
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        border-radius: 50%; /* Hình tròn bên trong */
+    }
+}
+
+
+
+.formLoginButton {
+    display: flex;
+    justify-content: center;
+    padding: 0 32px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    button {
+        background-color: #5FE00A;
+        padding: 10px 12px;
+        width: 70%;
+        color: white;
+        border: none;
+        font-family: $font;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+}
+
+.forgotpassword_signin {
+    display: flex;
+    justify-content: space-between;
+
+    .formForgotPassword {
+        .link {
+            text-decoration: none;
+            color: #83AEC0;
+            font-size: 16px;
+            font-family: $font;
+    
+            :hover {
+                color: #ff4500; /* Đổi màu chữ khi rê chuột */
+                text-decoration: underline; 
+            }
+            
+            a:hover {
+                color: #ff4500; 
+            }
+
+            .signin {
+                color: rgb(53, 189, 0);
+            }
+          
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .loginForm {
+        width: 80%;
+    }
+    .form {
+        padding: 0 30px;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .loginForm {
+        width: 60%;
+    }
+  
+}

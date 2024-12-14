@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$font: 'Roboto', sans-serif;
+$text-color: rgb(204, 255, 204);
+$mgRightMenuName: 10px;
+$fontSize: 16px;
+$borderColor: 1px solid #ced4da;
+$innerShadow: inset 0px 4px 12px -4px #ABABAB;
+
+
+.wrapper {
+    font-family: $font;
+
+
+
+}
+
+.wrapperTitle {
+    background-color: #007bff;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+        color: white;
+        margin: 0;
+        padding: 15px;
+        font-family: $font;
+        font-weight: 300;
+        font-size: 18px;
+    }
+
+    .reportSelection {
+        margin: 8px;
+        border: $borderColor;
+        border-radius: 8px;
+        width: 180px;
+        font-size: 16px;
+    }
+}
+
+.lineChartWrapper {
+    display: flex;
+    width: 100%;
+
+    .lineChart {
+        width: 100%;
+        border: $borderColor;
+        border-radius: 8px;
+        display: block;
+        margin-left: 15px;
+    }
+
+    .lineChartExpa {
+        width: 100%;
+        border: $borderColor;
+        border-radius: 8px;
+    }
+}
+
+.lineChartWrapper,
+.lineChartInfoWrapper {
+    margin-top: 24px;
+    padding: 15px;
+}
+
+.lineChartInfoWrapper {
+    padding: 15px;
+
+    .lineChartInfoTablewrapper {
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+
+        .lineChartInfoTableAddAndFavourite {
+            width: 100%;
+            margin-left: 25px;
+
+            .lineChartInfoTableFavourite {
+                margin-bottom: 40px;
+                width: 100%;
+            }
+        }
+
+
+        .goodName {
+            color: '#66645e';
+
+            &:hover {
+                cursor: pointer;
+                color: #007bff;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 885px) {
+    .lineChartInfoWrapper{
+        .lineChartInfoTablewrapper {
+            display: block;
+
+            .lineChartInfoTableAddAndFavourite {
+                margin: 0;
+                padding-top: 55px;
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .lineChartWrapper{
+        display: block;
+
+        .lineChart{
+            margin: 30px 0 0 0;
+            width: 100%;
+        }
+    }
+}
