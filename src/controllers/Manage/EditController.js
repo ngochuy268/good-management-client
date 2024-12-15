@@ -30,9 +30,10 @@ export const handleUpdate = async (editProduct, fetchProducts, setOpen, setProdu
             toast.success('商品情報を更新しました。');
             setOpen(false); 
             fetchProducts(setProducts);
-            toast.error('更新に失敗しました。');
         }
-    } catch (error) {
+        else toast.error('更新に失敗しました。');           
+    }
+    catch (error) {
         console.error('Error:', error);
         toast.error(error.message); 
     }
