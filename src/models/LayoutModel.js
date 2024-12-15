@@ -1,7 +1,7 @@
 
 export const fetchUserData = async (userId, token) => {
     try {
-        const response = await fetch(`http://localhost:5000/get-nhanvien/${userId}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/get-nhanvien/${userId}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
