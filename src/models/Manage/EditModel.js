@@ -1,7 +1,7 @@
 
 export const updateProductInAPI = async (editProduct) => {
     try {
-        const response = await fetch('http://localhost:5000/update-good', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/update-good`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

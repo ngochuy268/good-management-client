@@ -1,6 +1,6 @@
 export const createProduct = async (productData) => {
     try {
-        const response = await fetch('http://localhost:5000/insert-good', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/insert-good`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,6 +1,6 @@
 export const deleteProductInAPI = async (deleteItemId) => {
     try {
-        const response = await fetch(`http://localhost:5000/delete-good/${deleteItemId}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/delete-good/${deleteItemId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

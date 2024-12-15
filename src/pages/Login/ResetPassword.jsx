@@ -72,7 +72,7 @@ function ChangePassword() {
                     {errors.passwordReset && <p className={styles.errInput3}>{errors.passwordReset}</p>}
                     <div className={styles.formConfirmButton}>
                         <button className={styles.confirmButton} onClick={confirm}>
-                            Xác nhận
+                            確認
                         </button>
                     </div>
                 </form>
