@@ -26,7 +26,7 @@ export const SigninModel = {
 
     submitForm: async (formData, avatarBase64) => {
         try {
-            const response = await fetch('http://localhost:5000/insert-nhanvien', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/insert-nhanvien`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

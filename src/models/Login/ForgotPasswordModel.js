@@ -1,5 +1,5 @@
 export async function sendOtp(email, id) {
-    const response = await fetch('http://localhost:5000/send-otp', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/send-otp`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -10,7 +10,7 @@ export async function sendOtp(email, id) {
 }
 
 export async function verifyOtp(email, otp) {
-    const response = await fetch('http://localhost:5000/verify-otp', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/verify-otp`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -1,7 +1,7 @@
 
 export const fetchProductsFromAPI = async () => {
     try {
-        const response = await fetch('http://localhost:5000/get-goods');
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/get-goods`);
         const data = await response.json();
         if (data.success) {
             return data.data;

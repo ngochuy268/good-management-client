@@ -1,6 +1,6 @@
 export const fetchUserDataFromAPI = async (userId, token) => {
     try {
-        const response = await fetch(`http://localhost:5000/get-nhanvien/${userId}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/get-nhanvien/${userId}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -19,7 +19,7 @@ export const fetchUserDataFromAPI = async (userId, token) => {
 
 export const updateAvatarAPI = async (userId, base64Avatar) => {
     try {
-        const response = await fetch(`http://localhost:5000/update-avatar/${userId}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/update-avatar/${userId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
