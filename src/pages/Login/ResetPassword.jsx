@@ -50,6 +50,7 @@ function ChangePassword() {
                             <span className={styles.inputGroupText}><FontAwesomeIcon icon={faKey} /></span>
                         </div>
                         <input
+                            type='password'
                             className={styles.inputForm}
                             placeholder="パスワード"
                             value={password}
@@ -62,6 +63,7 @@ function ChangePassword() {
                             <span className={styles.inputGroupText}><FontAwesomeIcon icon={faKey} /></span>
                         </div>
                         <input
+                            type='password'
                             className={styles.inputForm}
                             placeholder="再入力のパスワード"
                             value={passwordReset}
