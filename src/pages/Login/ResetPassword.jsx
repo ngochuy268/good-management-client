@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import { useLocation } from 'react-router-dom';
 import { validateAll, handlePasswordChange } from '../../controllers/Login/ResetPasswordController';
 
+
 function ChangePassword() {
     const { state } = useLocation();
     const { id } = state || {}; 
