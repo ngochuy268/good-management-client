@@ -38,6 +38,6 @@ export const handleUpdate = async (formData, img, setImg, setID, setName, setCos
         toast.success(result.message);
         resetForm(setImg, setID, setName, setCost, setSell, setQuantity);  
     } else {
-        toast.error(result.message);
+        toast.success(result.message);
     }
 }
