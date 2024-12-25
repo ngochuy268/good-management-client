@@ -10,8 +10,8 @@ function Overview() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        loadProducts(setProducts);
         setLoading(false);
+        loadProducts(setProducts);
     }, []);
 
     if(loading) return (
