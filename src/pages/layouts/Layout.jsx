@@ -8,7 +8,11 @@ import ArrowDropdownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import TreeItem from '@mui/lab/TreeItem';
 import { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import PacmanLoader from "react-spinners/GridLoader";
+=======
+import PacmanLoader from "react-spinners/PacmanLoader";
+>>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
 import {
     getUserData,
     handleAvatarUpdate,
@@ -17,7 +21,10 @@ import {
 } from '../../controllers/LayoutController';
 
 function LayoutAdmin() {
+<<<<<<< HEAD
     const [loading, setLoading] = useState(true);
+=======
+>>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
     const [userData, setUserData] = useState({ name: '', avatar: null });
     const [avatarUpdateTime, setAvatarUpdateTime] = useState(Date.now());
     const [openSideBarMenu, setOpenSideBarMenu] = useState(true);
@@ -29,9 +36,30 @@ function LayoutAdmin() {
 
     useEffect(() => {
         getUserData(setUserData, setAvatarUpdateTime);
+<<<<<<< HEAD
         setLoading(false);   
     }, [avatarUpdateTime]);
 
+=======
+    }, [avatarUpdateTime]);
+
+    if(loading) return (
+    <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100vh',
+        flexDirection: 'column'
+    }}>
+        <PacmanLoader
+            color="#ff6f61"
+            size={70}
+            loading={loading}
+        />
+    </div>
+  );
+
+>>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
     return (
         <div className={styles.container}>
             <div
@@ -43,6 +71,7 @@ function LayoutAdmin() {
                 <div className="pageHeadWrapper">
                     <div className={styles.userAdmin}>
                         <div style={{ width: '80px' }} align="center">
+<<<<<<< HEAD
                             {loading ? (
                                 <>
                                     <div style={{ 
@@ -65,6 +94,13 @@ function LayoutAdmin() {
                                     style={{ width: '50px', borderRadius: '50%' }}
                                 />
                             }
+=======
+                            <img
+                                src={userData.avatar}
+                                alt="user-logo"
+                                style={{ width: '50px', borderRadius: '50%' }}
+                            />
+>>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
                         </div>
                         <div className={styles.pageNameWrapper}>
                             <Link to="/personal" className={styles.pageNameUser}>

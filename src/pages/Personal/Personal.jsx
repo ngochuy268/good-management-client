@@ -8,11 +8,16 @@ import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import AvatarUploader from '../../components/shared/AvatarUploader';
 import { loadUserData, handleAvatarUpload } from '../../controllers/PersonalController';
+<<<<<<< HEAD
 import PacmanLoader from "react-spinners/GridLoader";
 
 function Personal() {
     const [loading, setLoading] = useState(true);
     const [isUpdating, setIsUpdating] = useState(false);
+=======
+
+function Personal() {
+>>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
     const [userData, setUserData] = useState({
         id: '',
         name: '',
@@ -24,9 +29,16 @@ function Personal() {
         avatar: null,
     });
 
+<<<<<<< HEAD
     useEffect(() => {
         loadUserData(setUserData);
         setLoading(false);     
+=======
+    const [isUpdating, setIsUpdating] = useState(false);
+
+    useEffect(() => {
+        loadUserData(setUserData);
+>>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
     }, []);
 
     const handleAvatarClick = () => {
@@ -38,6 +50,7 @@ function Personal() {
         input.click();
     };
 
+<<<<<<< HEAD
     if(loading) return (
         <div style={{ 
             display: 'flex', 
@@ -54,6 +67,8 @@ function Personal() {
         </div>
       );
 
+=======
+>>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>

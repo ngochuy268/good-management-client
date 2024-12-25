@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import styles from './Overview.module.scss';
 import ApexChart from '../../pages/Overview/lineChart';
 import { loadProducts } from '../../controllers/OverviewController';
+<<<<<<< HEAD
 import PacmanLoader from "react-spinners/PacmanLoader";
 
 function Overview() {
@@ -30,6 +31,16 @@ function Overview() {
         </div>
       );
 
+=======
+
+function Overview() {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        loadProducts(setProducts);
+    }, []);
+
+>>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
@@ -47,6 +58,9 @@ function Overview() {
 }
 
 export default Overview;
+<<<<<<< HEAD
 
 // NODE_OPTIONS=--openssl-legacy-provider
 // NODE_OPTIONS=--openssl-legacy-provider
+=======
+>>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
