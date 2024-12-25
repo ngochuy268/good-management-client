@@ -51,6 +51,7 @@ export const SigninModel = {
             }
             return await response.json();
         } catch (error) {
+            console.error('Catch Error:', error.message);
             throw new Error('エラーが発生しました。もう一度お試しください');
         }
     }
