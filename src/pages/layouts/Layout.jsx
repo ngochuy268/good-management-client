@@ -8,6 +8,7 @@ import ArrowDropdownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import TreeItem from '@mui/lab/TreeItem';
 import { useState, useEffect } from 'react';
+import PacmanLoader from "react-spinners/PacmanLoader";
 import {
     getUserData,
     handleAvatarUpdate,
@@ -28,6 +29,22 @@ function LayoutAdmin() {
     useEffect(() => {
         getUserData(setUserData, setAvatarUpdateTime);
     }, [avatarUpdateTime]);
+
+    if(loading) return (
+    <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100vh',
+        flexDirection: 'column'
+    }}>
+        <PacmanLoader
+            color="#ff6f61"
+            size={70}
+            loading={loading}
+        />
+    </div>
+  );
 
     return (
         <div className={styles.container}>
