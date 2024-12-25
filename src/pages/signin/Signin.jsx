@@ -30,18 +30,15 @@ function SigninView() {
     const handleSubmit = async (e) => {
         toast.dismiss();
         e.preventDefault();
-        try {
-            const result = await SigninController.handleSubmit(formData, avatar);
-            if (result.success) {
-                toast.success('社員を正常に追加しました。');
-                history.push('/');
-            } else {
-                toast.error(result.message);
-            }
-        } catch (err) {
-            toast.success(err.message);
+        
+        const result = await SigninController.handleSubmit(formData, avatar);
+        if (result.success) {
+            toast.success('社員を正常に追加しました。');
             history.push('/');
+        } else {
+            toast.error(result.message);
         }
+      
     };
 
     return (
