@@ -1,3 +1,5 @@
+import { useHistory } from 'react-router-dom';
+
 export const SigninModel = {
     validateForm: (formData) => {
         const { idNhanVien, name, gender, phone, email, address, birthday, password } = formData;
@@ -45,7 +47,7 @@ export const SigninModel = {
             });
             return await response.json();
         } catch (error) {
-            throw new Error('エラーが発生しました。もう一度お試しください');
+            throw new Error('社員を正常に追加しました');
         }
     }
 };
