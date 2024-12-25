@@ -1,3 +1,5 @@
+import { SigninModel } from '../models/SigninModel';
+
 export const SigninController = {
     handleSubmit: async (formData, avatar) => {
         const validation = SigninModel.validateForm(formData);
