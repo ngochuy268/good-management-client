@@ -33,8 +33,11 @@ function Add() {
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            const imageUrl = URL.createObjectURL(file);
-            setImg(imageUrl);
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImg(reader.result); 
+            };
+            reader.readAsDataURL(file); 
         }
     }
 
