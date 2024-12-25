@@ -4,21 +4,14 @@ import { faEdit, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 import { Dialog, DialogTitle } from '@mui/material';
 import { useEffect, useState } from 'react';
-<<<<<<< HEAD
 import PacmanLoader from "react-spinners/GridLoader";
-=======
-
->>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
 import { fetchProducts } from '../../../controllers/Manage/ListController';
 import { handleInputChange, handleClickOpen, handleUpdate } from '../../../controllers/Manage/EditController';
 import { handleOpenDeleteDialog, handleCloseDeleteDialog, handleConfirmDelete } from '../../../controllers/Manage/DeleteController';
 
 function List() {
-<<<<<<< HEAD
     const [loading, setLoading] = useState(true);
 
-=======
->>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
 
 //------------------------------編集------------------------------ 
     const [open, setOpen] = useState(false);
@@ -38,7 +31,6 @@ function List() {
     const [products, setProducts] = useState([]);
      useEffect(() => {
         fetchProducts(setProducts);
-<<<<<<< HEAD
         setLoading(false);
     }, []);
 
@@ -58,10 +50,6 @@ function List() {
         </div>
       );
 
-=======
-    }, []);
-
->>>>>>> 96b5d83ff81be181acd324d80c5d6c156dfb0db8
     return (
         <>
             <div className={styles.container}>
