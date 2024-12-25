@@ -16,7 +16,7 @@ export const SigninController = {
                 reader.onloadend = async () => {
                     try {
                         const result = await SigninModel.submitForm(formData, reader.result);
-                        console.log(result.success);
+
                         if (result.success) {
                             localStorage.setItem('userId', formData.idNhanVien);
                         }

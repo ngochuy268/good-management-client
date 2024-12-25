@@ -43,6 +43,12 @@ export const SigninModel = {
                     avatar: avatarBase64
                 }),
             });
+
+                // Kiểm tra mã trạng thái HTTP
+            if (!response.ok) {
+                const errorData = await response.json(); // Lấy dữ liệu lỗi từ phản hồi
+                throw new Error(errorData.message || 'エラーが発生しました。もう一度お試しください');
+            }
             return await response.json();
         } catch (error) {
             throw new Error('エラーが発生しました。もう一度お試しください');
