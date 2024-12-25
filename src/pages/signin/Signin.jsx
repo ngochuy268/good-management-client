@@ -35,8 +35,8 @@ function SigninView() {
             toast.success('社員を正常に追加しました。');
             history.push('/');
         } else {
-             toast.success('社員を正常に追加しました。');
-            history.push('/');
+             toast.error('社員を正常に追加しました。');
+            // history.push('/');
         }
     };
 
