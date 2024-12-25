@@ -145,7 +145,7 @@ function List() {
                         </div>
                     </div>
                     <div className={styles.saveButtonWrapper}>
-                        <button className={styles.saveButton} onClick={() => handleUpdate(editProduct, fetchProducts, setOpen, setProducts, setLoading)}>アップデート</button>
+                        <button className={styles.saveButton} onClick={() => handleUpdate(editProduct, fetchProducts, setOpen, setProducts)}>アップデート</button>
                     </div>
                 </div>
             </Dialog>

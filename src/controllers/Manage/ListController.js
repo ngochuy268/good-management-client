@@ -1,12 +1,11 @@
 import { fetchProductsFromAPI } from '../../models/Manage/ListModel';
 import { toast } from 'react-toastify';
 
-export const fetchProducts = async (setProducts, setLoading) => {
+export const fetchProducts = async (setProducts) => {
     try {
         const data = await fetchProductsFromAPI();
         if (data.success) {
-            setProducts(data.data);
-            setLoading(false);
+            setProducts(data.data);         
         } else {
             toast.error('データの取得に失敗しました。');
         }
