@@ -25,8 +25,7 @@ function Personal() {
     });
 
     useEffect(() => {
-        loadUserData(setUserData);
-        setLoading(false);     
+        loadUserData(setUserData, setLoading);
     }, []);
 
     const handleAvatarClick = () => {

@@ -1,12 +1,14 @@
 
 import { fetchUserDataFromAPI, updateAvatarAPI } from '../models/PersonalModel';
 
-export const loadUserData = async (setUserData) => {
+export const loadUserData = async (setUserData, setLoading) => {
     const userId = localStorage.getItem('userId');
     const token = localStorage.getItem('token');
     const userData = await fetchUserDataFromAPI(userId, token);
     if (userData) {
         setUserData(userData);
+        setLoading(false);     
+
     }
 };
 

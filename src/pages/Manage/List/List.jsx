@@ -12,7 +12,6 @@ import { handleOpenDeleteDialog, handleCloseDeleteDialog, handleConfirmDelete } 
 function List() {
     const [loading, setLoading] = useState(true);
 
-
 //------------------------------編集------------------------------ 
     const [open, setOpen] = useState(false);
     const [editProduct, setEditProduct] = useState({
@@ -30,8 +29,7 @@ function List() {
 //------------------------------リスト------------------------------
     const [products, setProducts] = useState([]);
      useEffect(() => {
-        fetchProducts(setProducts);
-        setLoading(false);
+        fetchProducts(setProducts, setLoading);
     }, []);
 
     if(loading) return (
