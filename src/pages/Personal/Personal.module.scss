@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$font: 'Roboto', sans-serif;
+$text-color: rgb(204,255,204);
+$mgRightMenuName: 10px;
+$fontSize: 16px;
+$borderColor: 1px solid #ced4da;
+$innerShadow:  inset 0px 4px 12px -4px #ABABAB;
+
+.wrapper {
+    border-radius: 8px;
+    &:nth-child(2) {
+        margin-top: 30px;
+    }
+    font-family: $font;
+}
+
+.wrapperTitle {
+    background-color: #007bff;
+    border-radius: 7px;
+    display: flex;
+    color: white;
+
+    p {
+        margin: 0;
+        padding: 15px;
+        font-family: $font;
+        font-weight: 300;
+        font-size: 18px;
+    }
+}
+
+.addGoodsWrapper:nth-child(1) {
+
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.61);
+
+}
+
+.avatarContainer {
+    position: relative;
+    display: inline-block;
+    
+    &:hover {
+        .avatarOverlay {
+            opacity: 1;
+        }
+        
+        .employeeAvatar {
+            filter: brightness(70%);
+        }
+    }
+}
+
+.avatarOverlay {
+    position: absolute;
+    top: 50%;  // Thay đổi từ bottom: 0 thành top: 50%
+    left: 50%; // Thêm left: 50%
+    transform: translate(-50%, -50%); // Thêm transform để căn giữa hoàn toàn
+    color: white;
+    padding: 8px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 14px;
+    white-space: nowrap; // Tránh text bị xuống dòng
+    background: rgba(0, 0, 0, 0.5); // Thêm background để text dễ đọc hơn
+    border-radius: 4px; // Thêm bo góc cho đẹp
+}
+
+.employeeAvatar {
+    transition: filter 0.3s ease;
+}
+
+.employeeWrapper {
+    margin-top: 24px;
+    border-radius: 5px;
+    position: relative;
+    
+
+    .employeeTitle {
+        position: relative;
+        font-family: $font;
+        font-weight: 600;
+        padding: 12px 20px;
+        border-radius: 5px;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .employeeInfoWrapper{
+        width: 100%;
+        display: flex;
+
+        .employeeBasicInfoWrapper{
+            text-align: center;
+            height: 80vh;
+            width: 60%;
+            border-radius: 20px;
+            background: rgb(250,245,148);
+            background: linear-gradient(0deg, rgba(250,245,148,0.9360119047619048) 0%, rgba(241,241,209,0.9047355758709734) 53%);
+
+
+            .employeeAvatar {
+                margin-top: 15px;
+                width: 50%;
+                border-radius: 50%;
+            }
+
+            .signOutButton{
+                background-color: #f02636;
+                border: transparent;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-weight: 700;
+
+                &:hover{
+                    cursor: pointer;
+                    background: rgb(228,0,0);
+                    background: linear-gradient(180deg, rgba(228,0,0,1) 35%, rgba(240,38,54,1) 57%);
+                }
+                 
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+
+            .employeeInfoParagraph {
+                font-weight: 700;
+            }
+        }
+
+        .employeeInfoContentWrapper{
+            width: 50%;
+
+            .employeeContentWrapper{
+
+                .employeeContentTitle{
+                    margin: 8px 0;
+                }
+               
+                .employeeContentInfoWrapper{
+                    margin-left: 50px;
+
+                    .employeeContentInfoExpandWrapper{
+                        display: flex;
+                    }
+
+                    .employeeNoteWrapper{
+                        display: flex;
+                        align-items: center;
+                        margin: 0;
+
+                        .employeeInfoTitle {
+                            margin-right: 8px;
+                            font-weight: 700;
+                        }
+                        
+                    }
+                }
+            }
+
+
+        }
+    }
+
+}
+
+.employeeInfoContent{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    
+    .employeeInfoTitle {
+        margin-right: 8px;
+        font-weight: 700;
+    }
+
+    .employeeInfoParagraph{
+        margin: 10px 0;
+    }
+
+}
+
+.backgroundImg{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
+@media screen and (max-width: 768px) {
+    .employeeWrapper {
+        .employeeInfoWrapper {
+            display: block;
+
+            .employeeBasicInfoWrapper {
+                height: fit-content;
+
+                .signOutButton{
+                    margin-bottom: 15px;
+                }
+            }
+
+            .backgroundImg {
+                width: 100%;
+            }
+
+            .employeeInfoContentWrapper{
+                text-align: center;
+                width: 100%;
+
+                .employeeContentWrapper {
+                    .employeeContentInfoWrapper {
+                        margin: 0;
+                        padding: 0 15px;
+                    }
+                }
+            }
+        }
+    }
+}

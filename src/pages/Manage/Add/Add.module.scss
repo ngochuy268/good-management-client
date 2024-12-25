@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$font: 'Roboto', sans-serif;
+$text-color: rgb(204,255,204);
+$mgRightMenuName: 10px;
+$fontSize: 16px;
+$borderColor: 1px solid #ced4da;
+$innerShadow:  inset 0px 4px 12px -4px #ABABAB;
+
+
+
+.wrapperTitle {
+    background-color: #007bff;
+    border-radius: 8px;
+    color: white;
+    p {
+        margin: 0;
+        padding: 15px;
+        font-family: $font;
+        font-weight: 300;
+        font-size: 18px;
+    }
+}
+
+.addGoodsWrapper {
+    margin-top: 24px;
+    border: 1px groove;
+    border-radius: 5px;
+
+    .addGoodsItemsDesc{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 0 8px;
+        font-size: 18px;
+        font-family: $font;
+        font-weight: 700;
+        color: black;
+        padding: 30px;
+    }
+
+    .goodsTitle {
+        position: relative;
+        font-family: $font;
+        font-weight: 600;
+        padding: 12px 20px;
+        border-radius: 5px;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        &::after {
+            content: '';
+            position: absolute;
+            border-bottom: 1px groove;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+        }   
+
+        .addButton{
+            padding: 10px 30px;
+            border-radius: 5px;
+            background-color: #00a65a;
+            border: transparent;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                background: rgb(9,222,30);
+                background: linear-gradient(180deg, rgba(9,222,30,0.8407738095238095) 49%, rgba(38,240,61,1) 100%);
+            }
+        }
+    }
+
+    .addGoods{
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+
+        .addGoodsItems{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            padding: 0 8px;
+            font-size: 18px;
+            font-family: $font;
+            font-weight: 700;
+            color: black;
+            
+            .addGoodsInput {
+                font-size: 16px;
+                width: 100%;
+                margin-top: 15px;
+                border-radius: 5px;
+                border: $borderColor;
+                padding: 12px;
+                box-shadow: $innerShadow;
+                outline: none;
+            }
+        }
+    }
+
+    .addGoodsA {
+        display: none;
+        padding: 30px;
+
+        .addGoodsItems{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            padding: 0 8px;
+            font-size: 18px;
+            font-family: $font;
+            font-weight: 700;
+            color: black;
+            
+            .addGoodsInput {
+                font-size: 16px;
+                width: 100%;
+                margin-top: 15px;
+                border-radius: 5px;
+                border: $borderColor;
+                padding: 12px;
+                box-shadow: $innerShadow;
+            }
+        }
+    }
+
+
+    .addGoodsA.active {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .addGoodsImgWrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        width: 100%;
+        font-size: 18px;
+        font-family: $font;
+        font-weight: 700;
+        color: black;
+
+        input[type='file'] {
+            font-size: 18px;
+            padding: 15px;
+            border: $borderColor;
+            border-radius: 5px;
+            margin-top: 15px;
+            box-shadow: $innerShadow;
+        }
+    }
+    
+    .saveButtonWrapper {
+        display: flex;
+        justify-content: center;
+        padding: 50px;
+
+        .saveButton {
+            padding: 10px 30px;
+            border-radius: 5px;
+            background-color: #007bff;
+            border: transparent;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                background: rgb(4,66,135);
+                background: linear-gradient(180deg, rgba(4,66,135,1) 0%, rgba(12,29,180,1) 82%);
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .addGoodsWrapper {
+        .responsiveAddGoods{
+            .addGoods{
+                display: block;
+
+                .addGoodsItems {
+                    margin-top: 20px;
+
+                    .addGoodsInput {
+                        margin-top: 5px;
+                    }
+                }
+            }  
+        }
+
+        .addGoodsA {
+            .addGoodsItems {
+                margin-top: 20px;
+
+                .addGoodsInput {
+                    margin-top: 5px;
+                }
+            }
+        }
+        .addGoodsA.active {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 940px) and (min-width: 769px) {
+    .addGoodsWrapper {
+       .responsiveAddGoods{
+            display: flex;
+            justify-content: space-between;
+            .addGoods{
+                display: inline-block;
+
+                .addGoodsItems {
+                    margin-top: 15px;
+
+                    input {
+                        margin-top: 5px;
+                    }
+                }
+            }
+       }
+    }
+}
+
