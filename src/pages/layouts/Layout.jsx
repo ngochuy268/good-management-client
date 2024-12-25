@@ -28,8 +28,7 @@ function LayoutAdmin() {
     }, []);
 
     useEffect(() => {
-        getUserData(setUserData, setAvatarUpdateTime);
-        setLoading(false);   
+        getUserData(setUserData, setAvatarUpdateTime, setLoading);
     }, [avatarUpdateTime]);
 
     return (

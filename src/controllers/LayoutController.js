@@ -1,7 +1,7 @@
-// src/controllers/LayoutAdminController.js
+import { useState } from 'react';
 import { fetchUserData } from '../models/LayoutModel';
 
-export const getUserData = async (setUserData, setAvatarUpdateTime) => {
+export const getUserData = async (setUserData, setAvatarUpdateTime, setLoading) => {
     const userId = localStorage.getItem('userId');
     const token = localStorage.getItem('token');
 
@@ -13,6 +13,7 @@ export const getUserData = async (setUserData, setAvatarUpdateTime) => {
     const user = await fetchUserData(userId, token);
     if (user) {
         setUserData(user);
+        setLoading(false);
     }
 };
 
