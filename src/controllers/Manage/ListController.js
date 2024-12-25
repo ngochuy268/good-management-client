@@ -12,6 +12,5 @@ export const fetchProducts = async (setProducts, setLoading) => {
         }
     } catch (error) {
         console.error('Error:', error);
-        toast.error('サーバーエラーが発生しました。');
     }
 };
