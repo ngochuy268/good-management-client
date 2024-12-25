@@ -1,6 +1,3 @@
-import { SigninModel } from '../models/SigninModel';
-import { toast } from 'react-toastify';
-
 export const SigninController = {
     handleSubmit: async (formData, avatar) => {
         const validation = SigninModel.validateForm(formData);
@@ -16,7 +13,6 @@ export const SigninController = {
                 reader.onloadend = async () => {
                     try {
                         const result = await SigninModel.submitForm(formData, reader.result);
-
                         if (result.success) {
                             localStorage.setItem('userId', formData.idNhanVien);
                         }
