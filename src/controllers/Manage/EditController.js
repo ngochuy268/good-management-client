@@ -22,7 +22,7 @@ export const handleClickOpen = (productId, products, setEditProduct, setOpen) =>
         setOpen(true);
     }
 };
-export const handleUpdate = async (editProduct, fetchProducts, setOpen, setProducts, setLoading) => {
+export const handleUpdate = async (editProduct, fetchProducts, setOpen, setProducts) => {
     try {
         const data = await updateProductInAPI(editProduct); 
 
@@ -30,7 +30,6 @@ export const handleUpdate = async (editProduct, fetchProducts, setOpen, setProdu
             toast.success('商品情報を更新しました。');
             setOpen(false); 
             fetchProducts(setProducts);
-            setLoading(false);
         }
         else toast.error('更新に失敗しました。');           
     }
