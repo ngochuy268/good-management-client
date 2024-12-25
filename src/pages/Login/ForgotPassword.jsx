@@ -45,7 +45,7 @@ function ForgotPasswordInFo() {
                                         onChange={(e) => setID(e.target.value)}
                                     />
                                 </div>
-                                {validationMsg.iD && <p>{validationMsg.iD}</p>}
+                                {validationMsg.iD && <p style={{color: 'red'}}>{validationMsg.iD}</p>}
                             </div>
                             <div className={styles.formInputWithErr}>
                                 <div className={styles.formInput}>
@@ -61,7 +61,7 @@ function ForgotPasswordInFo() {
                                         onChange={(e) => setEmail(e.target.value)}
                                     />                                   
                                 </div>
-                                {validationMsg.email && <p>{validationMsg.email}</p>}
+                                {validationMsg.email && <p style={{color: 'red'}}>{validationMsg.email}</p>}
                             </div>
                             <div className={styles.formConfirmButton}>
                                 <button
