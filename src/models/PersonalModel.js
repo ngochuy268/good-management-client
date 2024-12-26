@@ -1,7 +1,6 @@
 export const fetchUserDataFromAPI = async (userId, token) => {
     try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/get-nhanvien/${userId}`, {
-            mode: 'no-cors',
             headers: {
                 Authorization: `Bearer ${token}`,
             },
